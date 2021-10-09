@@ -1,9 +1,8 @@
 FROM curlimages/curl:7.77.0
-RUN set -ex
 USER root
 RUN apk add openssl
 RUN apk add wget
-RUN curl https://get.acme.sh | sh
+RUN set -evx -o pipefail && curl https://get.acme.sh | sh
 ADD script/auto-acmesh.sh /usr/local/bin/
 ENV DNS_TYPE=dns_ali
 ENTRYPOINT ["sh"]
