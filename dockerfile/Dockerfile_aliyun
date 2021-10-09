@@ -1,0 +1,9 @@
+FROM curlimages/curl:7.77.0
+USER root
+RUN apk add openssl
+RUN apk add wget
+RUN curl https://get.acme.sh | sh
+ADD auto-acmesh.sh /usr/local/bin/
+ENV DNS_TYPE=dns_ali
+ENTRYPOINT ["sh"]
+CMD ["/usr/local/bin/auto-acmesh.sh"]
