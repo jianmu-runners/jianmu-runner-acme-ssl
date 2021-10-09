@@ -1,4 +1,5 @@
 FROM curlimages/curl:7.77.0
+RUN set -ex
 USER root
 RUN apk add openssl
 RUN apk add wget
