@@ -1,39 +1,49 @@
-# acmesh-sh
+#  jianmu-runner-acme-ssl
 
-#### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+### 介绍
 
-#### 软件架构
-软件架构说明
+自动颁发和更新免费证书
 
+### 阿里云
 
-#### 安装教程
+#### 输入参数
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+```
+domain: 域名
+email: 邮箱
+dns_check: 是否通过公共dns进行检查
+wget_use: 颁发证书时是否使用wget
+ali_key: 阿里云key
+ali_secret: 阿里云密钥
+```
 
-#### 使用说明
+####  构建docker镜像
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+```
+# 创建docker镜像
+docker build -t jianmudev/jianmu-runner-acme-ssl-aliyun:${version} -f dockerfile/Dockerfile_aliyun .
 
-#### 参与贡献
+# 上传docker镜像
+docker push jianmudev/jianmu-runner-acme-ssl-aliyun:${version}
+```
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+####  用法
 
+```
+docker run --rm \
+  -e JIANMU_DOMAIN=xxx \
+  -e JIANMU_EMAIL=xxx \
+  -e JIANMU_DNS_CHECK=xxx \
+  -e JIANMU_WGET_USE=xxx \
+  -e JIANMU_ALI_KEY=xxx \
+  -e JIANMU_ALI_SECRET=xxx \
+  jianmudev/jianmu-runner-acme-ssl-aliyun:${version}
+```
 
-#### 特技
+### 华为云
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+> 待完善
+
+### 腾讯云
+
+> 待完善

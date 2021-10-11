@@ -14,10 +14,10 @@ acme.sh --register-account -m ${JIANMU_EMAIL}
 # Then acme.sh will wait for 10 seconds instead of checking through the public dns.
 if test ${JIANMU_DNS_CHECK} = "true"
 then
+    echo "Wait 20s, acme.sh will use cloudflare public dns or google dns to check if the record has taken effect."
+else
     DNS_CHECK_TIME="--dnssleep 10"
     echo "Then acme.sh will wait for 10 seconds instead of checking through the public dns."
-else
-    echo "Wait 20s, acme.sh will use cloudflare public dns or google dns to check if the record has taken effect."
 fi
 # Use WGET
 if test ${JIANMU_WGET_USE} = "true"
