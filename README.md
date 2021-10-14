@@ -17,6 +17,13 @@ ali_key: 阿里云key
 ali_secret: 阿里云密钥
 ```
 
+#### 输出参数
+
+```
+cer_path: 包含中级证书的域名证书路径
+key_path: 域名证书私钥路径
+```
+
 ####  构建docker镜像
 
 ```
