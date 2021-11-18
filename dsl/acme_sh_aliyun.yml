@@ -38,12 +38,12 @@ outputParameters:
   - name: 域名证书
     ref: cer_path
     type: STRING
-    value: ""
     description: 包含中级证书的域名证书
+    required: true
   - name: 私钥
     ref: key_path
     type: STRING
-    value: ""
     description: 该域名证书的私钥
+    required: true
 spec:
   image: 'jianmudev/jianmu-runner-acme-ssl-aliyun:1.0.0'
