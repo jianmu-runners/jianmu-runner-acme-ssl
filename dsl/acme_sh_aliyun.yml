@@ -1,37 +1,39 @@
 ref: acme_ssl_aliyun
-version: 1.0.0
+version: 1.0.1
 resultFile: /usr/resultFile
 inputParameters:
   - name: 域名
     ref: domain
     type: STRING
-    value: ""
     description: 需要申请证书的域名
+    required: true
   - name: 邮箱
     ref: email
     type: STRING
-    value: ""
     description: 本人的邮箱
+    required: true
   - name: 是否通过公共dns进行检查
     ref: dns_check
     type: BOOL
     value: true
     description: 若参数为true, acme.sh将等待10秒, 而不是通过公共dns进行检查. 若为false, 则等待20秒, acme.sh将使用cloudflare公共dns或google dns检查记录是否生效。
+    required: false
   - name: 是否使用wget
     ref: wget_use
     type: BOOL
     value: true
     description: 若参数为true, 则在颁发证书时使用wget下载, 若参数为false, 则使用crul下载
+    required: false
   - name: 阿里云key
     ref: ali_key
     type: SECRET
-    value: ""
     description: 阿里云的AccessKey, 具体获取方式请参照阿里云官网
+    required: true
   - name: 阿里云密钥
     ref: ali_secret
     type: SECRET
-    value: ""
     description: 阿里云的密钥, 具体获取方式请参照阿里云官网
+    required: true
 outputParameters:
   - name: 域名证书
     ref: cer_path
