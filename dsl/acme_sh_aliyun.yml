@@ -16,7 +16,7 @@ inputParameters:
     ref: dns_check
     type: BOOL
     value: true
-    description: 若参数为true, acme.sh将等待10秒, 而不是通过公共dns进行检查. 若为false, 则等待20秒, acme.sh将使用cloudflare公共dns或google dns检查记录是否生效。
+    description: 若参数为false, acme.sh将等待10秒, 而不是通过公共dns进行检查. 若为true, 则等待20秒, acme.sh将使用cloudflare公共dns或google dns检查记录是否生效。
     required: false
   - name: 是否使用wget
     ref: wget_use
