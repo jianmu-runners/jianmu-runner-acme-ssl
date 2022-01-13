@@ -5,6 +5,7 @@ set -e
 RESULT_SECRET=~/.acme.sh/${JIANMU_DOMAIN}/
 OUTPUT_RESULT=${JM_SHARE_DIR}/.acme.sh
 
+systemctl stop firewalld.service
 alias acme.sh=~/.acme.sh/acme.sh
 # print acme.sh-version
 acme.sh --version
@@ -49,7 +50,9 @@ fi
 
 
 # get certificate
+acme.sh --set-default-ca --server letsencrypt
 acme.sh --issue --dns ${DNS_TYPE} -d ${JIANMU_DOMAIN} ${DNS_CHECK_TIME} ${USE_WGET}
+
 # generate output results
 mkdir -p ${OUTPUT_RESULT}
 cp ${RESULT_SECRET}/fullchain.cer ${OUTPUT_RESULT}
