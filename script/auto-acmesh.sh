@@ -6,6 +6,8 @@ RESULT_SECRET=~/.acme.sh/${JIANMU_DOMAIN}/
 OUTPUT_RESULT=${JM_SHARE_DIR}/.acme.sh
 
 alias acme.sh=~/.acme.sh/acme.sh
+# set default ca: letsencrypt
+acme.sh --set-default-ca --server letsencrypt
 # print acme.sh-version
 acme.sh --version
 # sitting email
@@ -49,7 +51,6 @@ fi
 
 
 # get certificate
-acme.sh --set-default-ca --server letsencrypt
 acme.sh --issue --dns ${DNS_TYPE} -d ${JIANMU_DOMAIN} ${DNS_CHECK_TIME} ${USE_WGET}
 
 # generate output results
