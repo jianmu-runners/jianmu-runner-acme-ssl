@@ -1,5 +1,6 @@
 ref: acme_ssl_aliyun
-version: 1.0.1
+version: 1.0.2
+description: 此版本中可以通过ca参数指定CA机构
 resultFile: /usr/resultFile
 inputParameters:
   - name: 域名
@@ -38,7 +39,7 @@ inputParameters:
     ref: ca
     type: STRING
     value: zerossl
-    description: 您可以指定CA机构，并填入此CA的URL，也可以使用已知CA提供的一个简短友好名称，短名称将拥有与URL相同的作用，目前支持的短名称有：letsencrypt，letsencrypt_test，buypass，buypass_test，zerossl，sslcom。默认使用zerossl
+    description: 指定CA机构，可为letsencrypt、letsencrypt_test、buypass、buypass_test、zerossl、sslcom。默认为zerossl，buypass、buypass_test、sslcom为收费的CA机构
     required: false
 outputParameters:
   - name: 域名证书
@@ -52,4 +53,4 @@ outputParameters:
     description: 该域名证书的私钥
     required: true
 spec:
-  image: 'jianmudev/jianmu-runner-acme-ssl-aliyun:1.0.0'
+  image: 'jianmudev/jianmu-runner-acme-ssl-aliyun:1.0.2'
