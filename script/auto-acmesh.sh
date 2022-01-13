@@ -7,7 +7,7 @@ OUTPUT_RESULT=${JM_SHARE_DIR}/.acme.sh
 
 alias acme.sh=~/.acme.sh/acme.sh
 # set default ca: letsencrypt
-acme.sh --set-default-ca --server letsencrypt
+acme.sh --set-default-ca --server ${JIANMU_CA}
 # print acme.sh-version
 acme.sh --version
 # sitting email

@@ -34,6 +34,12 @@ inputParameters:
     type: SECRET
     description: 阿里云的密钥, 具体获取方式请参照阿里云官网
     required: true
+  - name: ca机构
+    ref: ca
+    type: STRING
+    value: zerossl
+    description: 您可以指定CA机构，并填入此CA的URL，也可以使用已知CA提供的一个简短友好名称，短名称将拥有与URL相同的作用，目前支持的短名称有：letsencrypt，letsencrypt_test，buypass，buypass_test，zerossl，sslcom。默认使用zerossl
+    required: false
 outputParameters:
   - name: 域名证书
     ref: cer_path
