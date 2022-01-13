@@ -5,7 +5,6 @@ set -e
 RESULT_SECRET=~/.acme.sh/${JIANMU_DOMAIN}/
 OUTPUT_RESULT=${JM_SHARE_DIR}/.acme.sh
 
-systemctl stop firewalld.service
 alias acme.sh=~/.acme.sh/acme.sh
 # print acme.sh-version
 acme.sh --version
