@@ -53,4 +53,4 @@ outputParameters:
     description: 该域名证书的私钥
     required: true
 spec:
-  image: 'jianmudev/jianmu-runner-acme-ssl-aliyun:1.0.2'
+  image: jianmurunner/acme_ssl_aliyun:1.0.2
